@@ -1,0 +1,17 @@
+[
+	{
+		"id":4930956,
+		"name":"Boston",
+		"country":"US"
+	},
+	{
+		"id":2988507,
+		"name":"Paris",
+		"country": "FR"
+	},
+	{
+		"id":1850147,
+		"name":"Tokyo",
+		"country": "JP"
+	}
+]
