@@ -10,9 +10,23 @@ import UIKit
 
 fileprivate let reuseIdentifier = "cityCell"
 
+
+protocol SelectCityDelegate: class  {
+    
+    /*
+    called when user select a city from the tableView
+     provide the id (Int) of the selected city
+    */
+    func selected(cityId id: Int)
+    
+}
+
+
 class SelectCityViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    weak var delegate:SelectCityDelegate?
     
     lazy var tableData:[City] = {
         
@@ -89,21 +103,8 @@ extension SelectCityViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cityId = tableData[indexPath.row].id
-        
-        if let nav = self.presentingViewController as? UINavigationController {
-            
-            if let vc = nav.viewControllers[0] as? HomeViewController {
-                
-                // if the selected cityId is different from the old one, then change it and reload the data
-                if cityId != vc.cityId {
-                    vc.cityId = cityId
-                    vc.loadData(cityId: cityId)
-                }
-                // close the view
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
+        self.delegate?.selected(cityId: tableData[indexPath.row].id)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

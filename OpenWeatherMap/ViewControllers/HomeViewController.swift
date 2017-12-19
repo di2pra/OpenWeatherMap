@@ -84,6 +84,7 @@ class HomeViewController: UIViewController {
         // load and present the SelectCityVC passing the current city ID as the selectedCityID of the VC.
         if let vc = storyboard?.instantiateViewController(withIdentifier: "selectCityVC") as? SelectCityViewController {
             vc.selectedCityId = cityId
+            vc.delegate = self
             present(vc, animated: true, completion: nil)
         }
         
@@ -232,5 +233,20 @@ extension HomeViewController: UITableViewDataSource {
     
     
     
+    
+}
+
+
+/*
+ // MARK: - Select City Delegate
+ */
+extension HomeViewController: SelectCityDelegate {
+    
+    func selected(cityId id: Int) {
+        if id != cityId {
+            cityId = id
+            self.loadData(cityId: id)
+        }
+    }
     
 }
