@@ -49,7 +49,7 @@ class HomeViewController: UIViewController {
         self.loadingView.color = .red
         self.loadingView.type = .ballPulseSync
         
-        // register the our custom cell to the tableView
+        // register our custom cell to the tableView
         let cell = UINib(nibName: "ForecastCell", bundle: nil)
         self.tableView.register(cell, forCellReuseIdentifier: reuseIdentifier)
         self.tableView.rowHeight = 90
@@ -97,13 +97,14 @@ class HomeViewController: UIViewController {
             // init the loading
             /* ===========
              INIT LOADING:
-             hide the tableView, display the loadingView, set the value isLoading to true
+             hide the tableView, display the loadingView, set the value isLoading to true, set the navigationBar title to Loading..
              ===========*/
             
             self.tableView.isHidden = true
             self.loadingView.startAnimating()
             self.errorMsgLabel.isHidden = true
             self.isLoading = true
+            self.navigationItem.title = "Loading..."
             
             CityForecast.cityForecastById(cityId, units: tempUnits, completionHandler: { (cityForecast, error) in
                 
@@ -123,6 +124,9 @@ class HomeViewController: UIViewController {
                         self.errorMsgLabel.text = error.localizedDescription
                         self.errorMsgLabel.isHidden = false
                         
+                        // change the navigationBar title
+                        self.navigationItem.title = "Error"
+                        
                     }
                     
                     self.isLoading = false
@@ -140,6 +144,9 @@ class HomeViewController: UIViewController {
                         // display the error to the screen
                         self.errorMsgLabel.text = "error getting cityForecast data: result is nil"
                         self.errorMsgLabel.isHidden = false
+                        
+                        // change the navigationBar title
+                        self.navigationItem.title = "Error"
                     }
                     
                     self.isLoading  = false
@@ -217,9 +224,9 @@ extension HomeViewController: UITableViewDataSource {
             
             return cell
             
-        } else {
-            return UITableViewCell()
         }
+        
+        return UITableViewCell()
         
     }
     

@@ -94,9 +94,13 @@ extension SelectCityViewController : UITableViewDelegate {
         if let nav = self.presentingViewController as? UINavigationController {
             
             if let vc = nav.viewControllers[0] as? HomeViewController {
-                vc.cityId = cityId
-                vc.loadData(cityId: cityId)
                 
+                // if the selected cityId is different from the old one, then change it and reload the data
+                if cityId != vc.cityId {
+                    vc.cityId = cityId
+                    vc.loadData(cityId: cityId)
+                }
+                // close the view
                 self.dismiss(animated: true, completion: nil)
             }
         }

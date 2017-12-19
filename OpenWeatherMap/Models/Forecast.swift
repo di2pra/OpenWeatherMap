@@ -9,7 +9,7 @@
 import Foundation
 
 struct Forecast {
-    
+
     let dt: Date
     let dt_txt: String
     let temp:Double

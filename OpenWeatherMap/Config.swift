@@ -12,4 +12,4 @@ import UIKit
 let apikey:String = "e336ff86b42dea6f355bb03d9739db02"
 let apiMainEndpoint:String = "https://api.openweathermap.org/data/2.5/"
 let mainColor: UIColor = UIColor(red:0.09, green:0.63, blue:0.52, alpha:1.0) //#16A085
-let tempUnits:Units = .imperial
+let tempUnits:Units = .metric
