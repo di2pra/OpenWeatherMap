@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
     
     var isLoading: Bool = false
     
-    var cityId:Int = 4930956 // default city Id: Boston
+    var cityId:Int = 2988507 // default city Id: Paris
 
     override func viewDidLoad() {
         super.viewDidLoad()
