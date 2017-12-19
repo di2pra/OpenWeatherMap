@@ -23,9 +23,6 @@
 		E4D419911FE08E94006A4395 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4D419901FE08E94006A4395 /* Assets.xcassets */; };
 		E4D419941FE08E94006A4395 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D419921FE08E94006A4395 /* LaunchScreen.storyboard */; };
 		E4D4199D1FE08EF5006A4395 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4199C1FE08EF5006A4395 /* HomeViewController.swift */; };
-		E4D419A11FE08FC6006A4395 /* DayForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4199F1FE08FC6006A4395 /* DayForecastCell.swift */; };
-		E4D419A21FE08FC6006A4395 /* DayForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4D419A01FE08FC6006A4395 /* DayForecastCell.xib */; };
-		E4D419A51FE0A378006A4395 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D419A41FE0A378006A4395 /* ForecastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +45,6 @@
 		E4D419931FE08E94006A4395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4D419951FE08E94006A4395 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4D4199C1FE08EF5006A4395 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E4D4199F1FE08FC6006A4395 /* DayForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastCell.swift; sourceTree = "<group>"; };
-		E4D419A01FE08FC6006A4395 /* DayForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayForecastCell.xib; sourceTree = "<group>"; };
-		E4D419A41FE0A378006A4395 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		EB4BD87CCDC11FD5E0C6DD45 /* Pods-OpenWeatherMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenWeatherMap/Pods-OpenWeatherMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +83,15 @@
 				E429EE831FE8525D006EEC3B /* city.json */,
 			);
 			path = Ressources;
+			sourceTree = "<group>";
+		};
+		E455BDFA1FE89C7600920C74 /* ForecastCell */ = {
+			isa = PBXGroup;
+			children = (
+				E4534CD21FE5EB6F0041AA05 /* ForecastCell.swift */,
+				E4534CD31FE5EB6F0041AA05 /* ForecastCell.xib */,
+			);
+			path = ForecastCell;
 			sourceTree = "<group>";
 		};
 		E4D4197D1FE08E93006A4395 = {
@@ -138,11 +141,7 @@
 		E4D4199E1FE08F92006A4395 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E4D4199F1FE08FC6006A4395 /* DayForecastCell.swift */,
-				E4D419A01FE08FC6006A4395 /* DayForecastCell.xib */,
-				E4D419A41FE0A378006A4395 /* ForecastView.swift */,
-				E4534CD21FE5EB6F0041AA05 /* ForecastCell.swift */,
-				E4534CD31FE5EB6F0041AA05 /* ForecastCell.xib */,
+				E455BDFA1FE89C7600920C74 /* ForecastCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,7 +221,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4D419941FE08E94006A4395 /* LaunchScreen.storyboard in Resources */,
-				E4D419A21FE08FC6006A4395 /* DayForecastCell.xib in Resources */,
 				E4534CD51FE5EB6F0041AA05 /* ForecastCell.xib in Resources */,
 				E429EE841FE8525D006EEC3B /* city.json in Resources */,
 				E4D419911FE08E94006A4395 /* Assets.xcassets in Resources */,
@@ -299,8 +297,6 @@
 				E4D4199D1FE08EF5006A4395 /* HomeViewController.swift in Sources */,
 				E4534CD11FE339BF0041AA05 /* Weather.swift in Sources */,
 				E429EE861FE877CD006EEC3B /* SelectCityViewController.swift in Sources */,
-				E4D419A11FE08FC6006A4395 /* DayForecastCell.swift in Sources */,
-				E4D419A51FE0A378006A4395 /* ForecastView.swift in Sources */,
 				E4534CCB1FE0D3D50041AA05 /* Config.swift in Sources */,
 				E4534CCD1FE0D7740041AA05 /* City.swift in Sources */,
 			);
